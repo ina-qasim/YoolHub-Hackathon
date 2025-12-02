@@ -8,6 +8,7 @@
 body {
     background: #ffffff;
     color: #111;
+    min-height: 100vh;
 }
 
 header {
@@ -21,6 +22,7 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 600;
+    margin-left: 90px;
 }
 
 nav {
@@ -54,48 +56,64 @@ nav a {
     font-size: 14px;
 }
 
-
-.hero {
+/* MAIN CONTAINER */
+.main-container {
     width: 100%;
     padding: 40px 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* HERO/IMAGE SECTION */
+.hero-section {
+    display: flex;
+    justify-content: center;
     gap: 25px;
-    align-items: start;
+    margin-bottom: 40px;
 }
 
-.left-img img,
-.right-img img {
+/* LEFT AND RIGHT IMAGES */
+.side-image {
+    width: 392px;
+    height: 756px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.side-image img {
     width: 100%;
-    height: 550px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
 }
 
-.center-col {
+/* CENTER COLUMN */
+.center-column {
+    width: 426px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.center-col img {
+.center-image {
     width: 100%;
-    border-radius: 12px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.top-small {
-    height: 130px;
+.center-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.bottom-small {
-    height: 130px;
-    object-fit: cover;
-}
-
+/* SALE BOX - IN THE MIDDLE BETWEEN IMAGES */
 .sale-box {
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sale-box h2 {
@@ -110,6 +128,7 @@ nav a {
     letter-spacing: 6px;
     color: transparent;
     -webkit-text-stroke: 1px #000;
+    margin: 10px 0;
 }
 
 .sale-box p {
@@ -127,15 +146,167 @@ nav a {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-
+/* BRAND LOGOS AS SMALL IMAGES - ALL SAME SIZE */
 .brands {
     width: 100%;
-    padding: 50px 0;
+    padding: 30px 0;
     display: flex;
     justify-content: space-evenly;
-    font-size: 26px;
-    font-weight: 500;
+    align-items: center;
+    background: #fff;
+}
+
+.brand-logo {
+    height: 25px;
+    width: auto;
     opacity: 0.8;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+/* Make PRADA logo slightly bolder/darker */
+.prada-logo {
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.brand-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* REMOVE SPECIFIC SIZING - ALL LOGOS SAME SIZE */
+.chanel-logo,
+.lv-logo,
+.prada-logo,
+.ck-logo,
+.denim-logo {
+    height: 25px; /* All logos same height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+    .hero-section {
+        gap: 20px;
+    }
+    
+    .side-image {
+        width: 350px;
+        height: 676px;
+    }
+    
+    .center-column {
+        width: 380px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-container {
+        padding: 40px 30px;
+    }
+    
+    .side-image {
+        width: 320px;
+        height: 620px;
+    }
+    
+    .center-column {
+        width: 350px;
+    }
+    
+    .sale-box h1 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .side-image {
+        width: 100%;
+        max-width: 392px;
+        height: 500px;
+    }
+    
+    .center-column {
+        width: 100%;
+        max-width: 426px;
+        order: -1;
+    }
+    
+    .brands {
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 25px 20px;
+    }
+    
+    .brand-logo {
+        height: 20px;
+    }
+    
+    /* All logos same size on tablet */
+    .chanel-logo,
+    .lv-logo,
+    .prada-logo,
+    .ck-logo,
+    .denim-logo {
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo {
+        margin-left: 0;
+    }
+    
+    nav {
+        gap: 20px;
+    }
+    
+    .main-container {
+        padding: 20px;
+    }
+    
+    .sale-box h1 {
+        font-size: 60px;
+    }
+    
+    .sale-box h2 {
+        font-size: 30px;
+    }
+    
+    .brands {
+        gap: 20px;
+        padding: 20px 15px;
+    }
+    
+    .brand-logo {
+        height: 18px;
+    }
+    
+    /* All logos same size on mobile */
+    .chanel-logo,
+    .lv-logo,
+    .prada-logo,
+    .ck-logo,
+    .denim-logo {
+        height: 18px;
+    }
+    
+    .side-image {
+        height: 400px;
+    }
 }

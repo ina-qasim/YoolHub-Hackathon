@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hijabis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <header>
         <div class="logo">Hijabis</div>
 
@@ -15,49 +19,62 @@
             <a href="#">Home</a>
             <a href="#">Shops</a>
             <a href="#">Products</a>
+            <a href="#">Pockages</a>
         </nav>
 
         <div class="auth-buttons">
-            <a href="#" class="signin">Sign in</a>
-            <a href="#" class="signup">Sign up</a>
+            <a href="#" class="signin">Sign In</a>
+            <a href="#" class="signup">Sign Up</a>
         </div>
     </header>
 
-
-    <section class="hero">
-
-        <div class="left-img">
-            <img src="images/hero.jpg" alt="">
-        </div>
-
-        <div class="center-col">
-            <img class="top-small" src="images/top.png" alt="">
-
-            <div class="sale-box">
-                <h2>ULTIMATE</h2>
-                <h1>SALE</h1>
-                <p>NEW HIJABIS</p>
-                <button>SHOP NOW</button>
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-container">
+        
+        <!-- HERO SECTION WITH IMAGES -->
+        <div class="hero-section">
+            <!-- LEFT IMAGE -->
+            <div class="side-image">
+                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion model">
             </div>
 
-            <img class="bottom-small" src="images/bottom.png" alt="">
+            <!-- CENTER COLUMN -->
+            <div class="center-column">
+                <!-- TOP IMAGE -->
+                <div class="center-image">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion accessory">
+                </div>
+
+                <!-- SALE CONTENT (BETWEEN IMAGES) -->
+                <div class="sale-box">
+                    <h2>ULTIMATE</h2>
+                    <h1>SALE</h1>
+                    <p>NEW HIJABIS</p>
+                    <button>SHOP NOW</button>
+                </div>
+
+                <!-- BOTTOM IMAGE -->
+                <div class="center-image">
+                    <img src="https://images.unsplash.com/photo-1588159343745-445ae0b16383?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion model">
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="side-image">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion model with hijab">
+            </div>
         </div>
 
-        <div class="right-img">
-            <img src="images/herohijab.jpg" alt="">
-        </div>
+        <!-- BRAND LOGOS AS IMAGES -->
+        <section class="brands">
+            <img src="images/channel.png" alt="CHANEL" class="brand-logo chanel-logo">
+            <img src="images/louis.png" alt="LOUIS VUITTON" class="brand-logo lv-logo">
+            <img src="images/prada.png" alt="PRADA" class="brand-logo prada-logo">
+            <img src="images/calvin.png" alt="Calvin Klein" class="brand-logo ck-logo">
+            <img src="images/demin.png" alt="DENIM" class="brand-logo denim-logo">
+        </section>
+    </div>
 
-    </section>
-
-
-
-    <section class="brands">
-        <span>CHANEL</span>
-        <span>LOUIS VUITTON</span>
-        <span>PRADA</span>
-        <span>Calvin Klein</span>
-        <span>DENIM</span>
-    </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
