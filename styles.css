@@ -44,6 +44,8 @@ nav a {
 .signin {
     color: #222;
     text-decoration: none;
+        padding: 8px 18px;
+
     font-size: 15px;
 }
 
@@ -103,7 +105,7 @@ nav a {
 
 .sale-box {
     text-align: center;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     flex-grow: 1;
     display: flex;
     height: 383px;
@@ -123,10 +125,10 @@ nav a {
     font-size: 160px;
     font-weight: 300;
     
-    letter-spacing: 9px;
+    letter-spacing: 6px;
     color: transparent;
     -webkit-text-stroke: 1px #000;
-    /* margin: 5px 0; */
+    margin: 5px 0;
 }
 
 .sale-box p {
