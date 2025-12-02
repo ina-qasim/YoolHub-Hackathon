@@ -13,7 +13,7 @@ body {
 
 header {
     width: 100%;
-    padding: 25px 60px;
+    padding: 25px 90px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,12 +22,12 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 600;
-    margin-left: 90px;
 }
 
 nav {
     display: flex;
     gap: 35px;
+    margin-left: 150px;
 }
 
 nav a {
@@ -56,13 +56,11 @@ nav a {
     font-size: 14px;
 }
 
-/* MAIN CONTAINER */
 .main-container {
     width: 100%;
-    padding: 40px 60px;
+    padding: 40px 90px;
 }
 
-/* HERO/IMAGE SECTION */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -70,7 +68,6 @@ nav a {
     margin-bottom: 40px;
 }
 
-/* LEFT AND RIGHT IMAGES */
 .side-image {
     width: 392px;
     height: 756px;
@@ -84,7 +81,6 @@ nav a {
     object-fit: cover;
 }
 
-/* CENTER COLUMN */
 .center-column {
     width: 426px;
     display: flex;
@@ -105,30 +101,32 @@ nav a {
     object-fit: cover;
 }
 
-/* SALE BOX - IN THE MIDDLE BETWEEN IMAGES */
 .sale-box {
     text-align: center;
-    padding: 40px 0;
+    padding: 10px 0;
     flex-grow: 1;
     display: flex;
+    height: 383px;
+    width: 399px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .sale-box h2 {
-    font-size: 38px;
+    font-size: 13cqh;
     font-weight: 600;
     color: #444;
 }
 
 .sale-box h1 {
-    font-size: 80px;
+    font-size: 160px;
     font-weight: 300;
-    letter-spacing: 6px;
+    
+    letter-spacing: 9px;
     color: transparent;
     -webkit-text-stroke: 1px #000;
-    margin: 10px 0;
+    /* margin: 5px 0; */
 }
 
 .sale-box p {
@@ -150,7 +148,6 @@ nav a {
     letter-spacing: 1px;
 }
 
-/* BRAND LOGOS AS SMALL IMAGES - ALL SAME SIZE */
 .brands {
     width: 100%;
     padding: 30px 0;
@@ -160,69 +157,57 @@ nav a {
     background: #fff;
 }
 
-.brand-logo {
-    height: 25px;
+.brands img {
+    height: 20px;
     width: auto;
     opacity: 0.8;
     filter: grayscale(100%);
     transition: all 0.3s ease;
 }
 
-/* Make PRADA logo slightly bolder/darker */
-.prada-logo {
-    filter: grayscale(100%) brightness(0.7);
+.brands img:nth-child(2),
+.brands img[alt="LOUIS VUITTON"] {
+    height: 25px;
+    font-weight: bolder;
 }
 
-.brand-logo:hover {
+.brands img:nth-child(5),
+.brands img[alt="DENIM"] {
+    height: 100px;
+    font-weight: bolder;
+}
+
+.brands img:nth-child(4),
+.brands img[alt="Calvin Klein"] {
+    height: 40px;
+}
+
+.brands img:nth-child(3),
+.brands img[alt="PRADA"] {
+    filter: grayscale(100%) brightness(0.7);
+    height: 32px;
+}
+
+.brands img:nth-child(1),
+.brands img[alt="CHANEL"] {
+    filter: grayscale(100%) brightness(0.7);
+    height: 33px;
+}
+
+.brands img:hover {
     opacity: 1;
     filter: grayscale(0%);
 }
 
-/* REMOVE SPECIFIC SIZING - ALL LOGOS SAME SIZE */
-.chanel-logo,
-.lv-logo,
-.prada-logo,
-.ck-logo,
-.denim-logo {
-    height: 25px; /* All logos same height */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1600px) {
-    .hero-section {
-        gap: 20px;
-    }
-    
-    .side-image {
-        width: 350px;
-        height: 676px;
-    }
-    
-    .center-column {
-        width: 380px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .main-container {
-        padding: 40px 30px;
-    }
-    
-    .side-image {
-        width: 320px;
-        height: 620px;
-    }
-    
-    .center-column {
-        width: 350px;
-    }
-    
-    .sale-box h1 {
-        font-size: 70px;
-    }
-}
-
 @media (max-width: 1200px) {
+    header {
+        padding: 25px 60px; 
+    }
+    
+    .main-container {
+        padding: 40px 60px; 
+    }
+    
     .hero-section {
         flex-direction: column;
         align-items: center;
@@ -247,25 +232,39 @@ nav a {
         padding: 25px 20px;
     }
     
-    .brand-logo {
-        height: 20px;
+    .brands img {
+        height: 18px;
     }
     
-    /* All logos same size on tablet */
-    .chanel-logo,
-    .lv-logo,
-    .prada-logo,
-    .ck-logo,
-    .denim-logo {
-        height: 20px;
+    .brands img:nth-child(2),
+    .brands img[alt="LOUIS VUITTON"] {
+        height: 23px;
+    }
+    
+    .brands img:nth-child(5),
+    .brands img[alt="DENIM"] {
+        height: 80px;
+    }
+    
+    .brands img:nth-child(4),
+    .brands img[alt="Calvin Klein"] {
+        height: 35px;
+    }
+    
+    .brands img:nth-child(3),
+    .brands img[alt="PRADA"] {
+        height: 28px;
+    }
+    
+    .brands img:nth-child(1),
+    .brands img[alt="CHANEL"] {
+        height: 29px;
     }
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
+        padding: 15px 20px; 
     }
     
     .logo {
@@ -277,7 +276,7 @@ nav a {
     }
     
     .main-container {
-        padding: 20px;
+        padding: 20px; 
     }
     
     .sale-box h1 {
@@ -293,17 +292,33 @@ nav a {
         padding: 20px 15px;
     }
     
-    .brand-logo {
-        height: 18px;
+    .brands img {
+        height: 16px;
     }
     
-    /* All logos same size on mobile */
-    .chanel-logo,
-    .lv-logo,
-    .prada-logo,
-    .ck-logo,
-    .denim-logo {
-        height: 18px;
+    .brands img:nth-child(2),
+    .brands img[alt="LOUIS VUITTON"] {
+        height: 20px;
+    }
+    
+    .brands img:nth-child(5),
+    .brands img[alt="DENIM"] {
+        height: 60px;
+    }
+    
+    .brands img:nth-child(4),
+    .brands img[alt="Calvin Klein"] {
+        height: 28px;
+    }
+    
+    .brands img:nth-child(3),
+    .brands img[alt="PRADA"] {
+        height: 24px;
+    }
+    
+    .brands img:nth-child(1),
+    .brands img[alt="CHANEL"] {
+        height: 25px;
     }
     
     .side-image {
