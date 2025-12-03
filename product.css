@@ -133,7 +133,7 @@ a {
   object-fit: cover;
   display: block;
   /* if you want to override the src with a bg image, keep this line */
-  content: url("images/productbg.png");
+  /* content: url("images/productbg.png"); */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
@@ -629,7 +629,7 @@ a {
 
   .purchase-area {
     margin: 20px 0 16px;
-    gap: 9px;
+    gap: px;
   }
 
   .quantity-control {
