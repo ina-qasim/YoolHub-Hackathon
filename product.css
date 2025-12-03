@@ -132,8 +132,6 @@ a {
   max-height: 650px;
   object-fit: cover;
   display: block;
-  /* if you want to override the src with a bg image, keep this line */
-  /* content: url("images/productbg.png"); */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
