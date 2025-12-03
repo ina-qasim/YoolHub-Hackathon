@@ -14,15 +14,26 @@
     <header>
         <div class="logo">Hijabis</div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Shops</a>
-            <a href="#">Products</a>
-        </nav>
+        <!-- Hamburger toggle (no JS) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-        <div class="auth-buttons">
-            <a href="#" class="signin">Sign In</a>
-            <a href="#" class="signup">Sign Up</a>
+        <!-- Nav + buttons wrapper -->
+        <div class="nav-menu">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shops</a>
+                <a href="#">Products</a>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="#" class="signin">Sign In</a>
+                <a href="#" class="signup">Sign Up</a>
+            </div>
         </div>
     </header>
 
@@ -35,7 +46,7 @@
 
             <div class="center-column">
                 <div class="center-image">
-                    <img src="images/top.png" alt="Fashion accessory">
+                    <img src="images/bottom.png" alt="Fashion accessory">
                 </div>
 
                 <div class="sale-box">
@@ -46,7 +57,7 @@
                 </div>
 
                 <div class="center-image">
-                    <img src="images/bottom.png" alt="Fashion model">
+                    <img src="images/top.png" alt="Fashion model">
                 </div>
             </div>
 
@@ -55,13 +66,14 @@
             </div>
         </div>
 
-       <section class="brands">
-    <img src="images/channel.png" alt="CHANEL">
-    <img src="images/louis.png" alt="LOUIS VUITTON">
-    <img src="images/prada.png" alt="PRADA">
-    <img src="images/calvin.png" alt="Calvin Klein" ">
-    <img src="images/demin.png" alt="DENIM" >
-</section>
+        <section class="brands">
+            <img src="images/channel.png" alt="CHANEL">
+            <img src="images/louis.png" alt="LOUIS VUITTON">
+            <img src="images/prada.png" alt="PRADA">
+            <!-- fixed extra quote -->
+            <img src="images/calvin.png" alt="Calvin Klein">
+            <img src="images/demin.png" alt="DENIM">
+        </section>
     </div>
 
     <script src="script.js"></script>
