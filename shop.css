@@ -6,17 +6,10 @@
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-}
-
-.page-wrapper {
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 0 120px;
-  background: #ffffff;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.02);
+  font-family: "Poppins", sans-serif;
+  background: #fffdfd;          /* page background */
+  color: #333;
+  line-height: 1.6;
 }
 
 a {
@@ -24,65 +17,157 @@ a {
   text-decoration: none;
 }
 
-/* HEADER ----------------------------------------------------- */
-.site-header {
+/* WRAPPER (same as product/home layout) ---------------------------- */
+.page-wrapper {
+  max-width: 1170px;          /* same width as product page */
+  margin: 0 auto;
+  padding: 0 120px;           /* desktop horizontal padding */
+  background: #fffdfd;
+  min-height: 100vh;
+}
+
+/* HEADER / NAV ---------------------------------------------------- */
+/* This matches the header from your home page (page-shell) */
+header {
   display: flex;
   align-items: center;
-    padding: 24px 0;
-  border-bottom: 1px solid #eaeaea;
+  padding: 24px 0;          /* horizontal handled by .page-wrapper */
+  position: relative;
+  z-index: 20;
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-.main-nav {
+/* nav wrapper (links + icons) */
+.nav-menu {
+  margin-left: auto;
   display: flex;
-  gap: 28px;
-  margin-left: 310px;
+  align-items: center;
+  gap: 48px;
 }
 
-.main-nav a {
+/* nav links row */
+.nav-menu nav {
+  padding: 0 50px;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-menu nav a {
   font-size: 13px;
-  color: #777;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 1px;
   position: relative;
-  padding-bottom: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
   transition: color 0.25s ease;
 }
 
-.main-nav a::after {
+.nav-menu nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -6px;
   width: 0;
-  height: 1.5px;
-  background: #111;
+  height: 2px;
+  background: #000;
   transition: width 0.25s ease;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
-  color: #111;
+.nav-menu nav a:hover {
+  color: #000;
 }
 
-.main-nav a:hover::after,
-.main-nav a.active::after {
+.nav-menu nav a:hover::after {
   width: 100%;
 }
 
+/* icons (inside .nav-menu in your HTML) */
 .nav-icons {
-  margin-left: auto;
   display: flex;
   gap: 14px;
   font-size: 16px;
   color: #555;
 }
 
-/* PAGE TITLE -------------------------------------------------- */
+/* (optional, from home page – safe even if unused here) */
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.signin {
+  color: #555;
+  padding: 0 50px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.signup {
+  padding: 10px 34px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.45);
+  transition: 0.18s ease;
+}
+
+.signup:hover {
+  transform: translateY(-3px);
+  background: #111;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* MOBILE NAV TOGGLE ----------------------------------------------- */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: none;              /* show only on mobile via media query */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 3px;
+  transition: 0.3s ease;
+  transform-origin: left;
+}
+
+/* hamburger animation to "X" */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* PAGE TITLE ------------------------------------------------------ */
 .page-title {
   text-align: center;
   margin: 40px 0 24px;
@@ -401,6 +486,7 @@ a {
   align-items: center;
   font-size: 13px;
   color: #777;
+  background: #ffffff;
 }
 
 .footer-logo {
@@ -410,4 +496,123 @@ a {
 .footer-nav {
   display: flex;
   gap: 22px;
+}
+
+/* ============= RESPONSIVE: WRAPPER PADDING ============= */
+@media (max-width: 1100px) {
+  .page-wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 16px;
+  }
+}
+
+/* ============= TABLET / SMALL DESKTOP ================== */
+@media (max-width: 1200px) {
+  header {
+    padding: 20px 0;
+  }
+
+  .layout {
+    grid-template-columns: 220px 1fr;
+    gap: 28px;
+  }
+}
+
+/* ============= MOBILE / TABLET PORTRAIT ================= */
+@media (max-width: 900px) {
+  header {
+    padding: 16px 0;
+  }
+
+  /* show hamburger icon on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255);
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+    border-top: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0 22px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* stack links vertically */
+  .nav-menu nav {
+    padding: 0;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-menu nav a {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* icons sit under links inside dropdown */
+  .nav-icons {
+    gap: 12px;
+  }
+
+  /* open dropdown when checkbox is checked */
+  .menu-toggle:checked ~ .hamburger + .nav-menu,
+  .menu-toggle:checked ~ .nav-menu {
+    max-height: 260px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .page-title {
+    margin: 28px 0 20px;
+  }
+}
+
+/* MOBILE GRID -------------------------------------------------- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-title h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+
+  .view-toggle {
+    align-self: flex-end;
+  }
 }
